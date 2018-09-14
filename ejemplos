@@ -20,7 +20,6 @@ int main()
 
 
 
-
     return 0;
 
 }
@@ -66,14 +65,15 @@ bool diezinterrogantes(char *cadena)
     return 1;
     }
 
+
+
 void recorrerMatriz(void)
 {
     int matrix[3][3]={{1,2,3},{4,5,6},{7,8,9}};
 
     int N=3;
-    int M=0;
-    int P=0;
-    int W=0;
+    int M1=0, M2=0, M3=0, M4=0, M5=0, M6=0, M7=0, M8=0;
+    int W=0, X=0, Y=0, Z=0;
 
     for(int i=0; i<N; i++)
     {
@@ -83,15 +83,16 @@ void recorrerMatriz(void)
         }
 
     }
-    cout<<"Diaginal 1 es: "<<endl;
+    cout<<"Diagonal 1 es: "<<endl;
     for(int i=0; i<N; i++)
     {
         for(int j=0; j<N; j++)
         {
             if(i==j)
             {
-                cout<<matrix[i][j]<<endl;
-            }
+               cout<<matrix[i][j]<<endl;
+                M1+=matrix[i][j];
+            }        
         }
 
     }
@@ -103,6 +104,7 @@ void recorrerMatriz(void)
             if (((i==0)&&(j==2))||((i==1)&&(j==1))||((i==2)&&(j==0)))
             {
                 cout<<matrix[i][j]<<" "<<endl;
+                M2+=matrix[i][j];
             }
         }
     }
@@ -114,6 +116,7 @@ void recorrerMatriz(void)
             if (((i==1)&&(j==0))||((i==1)&&(j==1))||((i==1)&&(j==2)))
             {
                 cout<<matrix[i][j]<<" "<<endl;
+                M3+=matrix[i][j];
             }
         }
     }
@@ -125,8 +128,73 @@ void recorrerMatriz(void)
             if (((i==0)&&(j==1))||((i==1)&&(j==1))||((i==2)&&(j==1)))
             {
                 cout<<matrix[i][j]<<" "<<endl;
+                M4+=matrix[i][j];
             }
         }
     }
+    cout<<"Diagonal 5 es: "<<endl;
+    for(int i=0; i<N; i++)
+    {
+        for(int j=0; j<N; j++)
+        {
+            if(i<j)
+            {
+                cout<<matrix[i][j]<<endl;
+                M5+=matrix[i][j];
+            }
+        }
+    }
+    cout<<"Diagonal 6 es: "<<endl;
+    for(int i=0; i<N; i++)
+    {
+        for(int j=0; j<N; j++)
+        {
+            if(i>j)
+            {
+                cout<<matrix[i][j]<<endl;
+                M6+=matrix[i][j];
+            }
+        }
+    }
+    cout<<"Diagonal 7 es: "<<endl;
+    for(int i=0; i<N; i++)
+    {
+        for(int j=0; j<N; j++)
+        {
+            if (((i==0)&&(j==1))||((i==0)&&(j==0))||((i==1)&&(j==0)))
+            {
+                cout<<matrix[i][j]<<" "<<endl;
+                M7+=matrix[i][j];
+            }
+        }
+    }
+    cout<<"Diagonal 8 es: "<<endl;
+    for(int i=0; i<N; i++)
+    {
+        for(int j=0; j<N; j++)
+        {
+            if (((i==1)&&(j==2))||((i==2)&&(j==2))||((i==2)&&(j==1)))
+            {
+                cout<<matrix[i][j]<<" "<<endl;
+                M8+=matrix[i][j];
+            }
+        }
+    }
+    cout<<"La suma de M1 es: "<<M1<<endl;
+    cout<<"La suma de M2 es: "<<M2<<endl;
+    cout<<"La suma de M3 es: "<<M3<<endl;
+    cout<<"La suma de M4 es: "<<M4<<endl;
+    cout<<"La suma de M5 es: "<<M5<<endl;
+    cout<<"La suma de M6 es: "<<M6<<endl;
+    cout<<"La suma de M7 es: "<<M7<<endl;
+    cout<<"La suma de M8 es: "<<M8<<endl;
+    W=(M1+M2);
+    X=(M3+M4);
+    Y=(M5+M6);
+    Z=(M7+M8);
+    cout<<"La suma de M1+M2 es: "<<W<<endl;
+    cout<<"La suma de M3+M4 es: "<<X<<endl;
+    cout<<"La suma de M5+M6 es: "<<Y<<endl;
+    cout<<"La suma de M7+M8 es: "<<Z<<endl;
 }
 
